@@ -24,12 +24,10 @@ const Timetable = () => {
       .catch(error => console.error('Error fetching timetable data:', error));
   }, []);
 
-  // Handle day filtering
   const handleDayChange = (event) => {
     setDayFilter(event.target.value);
   };
 
-  // Filter the timetable based on the selected day
   const filteredTimetable = dayFilter === 'All'
     ? timetableData
     : timetableData.filter(item => item.day === dayFilter);
